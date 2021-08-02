@@ -5,6 +5,7 @@
 ### 1 - MNIST
 
 - **Task**: Classification (10 classes)
+- **Method**: Supervised learning
 - **Dataset**: [MNIST](http://yann.lecun.com/exdb/mnist/)
 - **Network**: Convolutional Neural Network (CNN)
 - **Results**: Accuracy 99.2%
