@@ -7,7 +7,7 @@
 - **Task**: Classification (10 classes)
 - **Dataset**: [MNIST](http://yann.lecun.com/exdb/mnist/)
 - **Network**: Convolutional Neural Network (CNN)
-- **Results**:
+- **Results**: Accuracy 99.2%
 
 ## Credit
 

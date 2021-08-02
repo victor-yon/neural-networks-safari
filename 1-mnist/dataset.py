@@ -11,15 +11,24 @@ NUM_WORKERS = int(os.cpu_count() / 2)
 
 
 class MNISTDataModule(pl.LightningDataModule):
-    def __init__(self, batch_size: int):
+    def __init__(self, batch_size: int, augmentation: bool = True):
         super().__init__()
         self.data_dir = PATH_DATASETS
         self.batch_size = batch_size
 
-        self.transform = transforms.Compose([
+        if augmentation:
+            tr = [
+                transforms.RandomRotation(10)
+            ]
+        else:
+            tr = []
+
+        tr.extend([
             transforms.ToTensor(),
             transforms.Normalize((0.1307,), (0.3081,))
         ])
+
+        self.transform = transforms.Compose(tr)
 
         # Nothing loaded yet
         self.mnist_train = self.mnist_val = self.mnist_test = None

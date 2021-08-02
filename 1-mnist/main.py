@@ -15,7 +15,7 @@ def cli_main():
 
     # Arguments
     parser = ArgumentParser()
-    parser.add_argument('--batch_size', default=32, type=int)
+    parser.add_argument('--batch_size', default=128, type=int)
     parser = pl.Trainer.add_argparse_args(parser)
     parser = CNN.add_model_specific_args(parser)
     args = parser.parse_args()
@@ -27,7 +27,7 @@ def cli_main():
     model = CNN(args.learning_rate)
 
     # Training
-    trainer = Trainer(deterministic=True, max_epochs=10, gpus=AVAIL_GPUS)
+    trainer = Trainer(deterministic=True, max_epochs=20, gpus=AVAIL_GPUS)
     trainer.fit(model, datamodule)
 
     # Testing
