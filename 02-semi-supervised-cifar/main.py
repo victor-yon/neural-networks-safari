@@ -22,6 +22,9 @@ def cli_main():
 
     # Dataset
     datamodule = CIFARDataModule(batch_size=args.batch_size, augmentation=False, validation_split=0.1)
+    datamodule.prepare_data()
+    datamodule.setup()
+    datamodule.plot_sample(20)
 
     # Model
     model = BayesCNN(args.learning_rate)
