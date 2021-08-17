@@ -6,11 +6,16 @@ from pytorch_lightning import Trainer
 
 from dataset import MNISTDataModule
 from network import CNN
+from utils.logger import logger, setup_logger
 
 AVAIL_GPUS = min(1, torch.cuda.device_count())
 
 
 def cli_main():
+    setup_logger()
+
+    logger.info('Start MINST')
+
     pl.seed_everything(42, workers=True)
 
     # Arguments

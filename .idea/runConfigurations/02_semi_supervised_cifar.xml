@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="2-semi-supervised-cifar" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="02-semi-supervised-cifar" type="PythonConfigurationType" factoryName="Python">
     <module name="neural-networks-safari" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
